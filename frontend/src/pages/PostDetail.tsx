@@ -56,7 +56,7 @@ export default function PostDetail() {
       <div className="post-detail">
         <h1>{post.title}</h1>
         <div className="post-meta">
-          ✍️ {post.author} · {new Date(post.created_at).toLocaleDateString('hu-HU')}
+          ✍️ {post.author} · {post.createdAt ? new Date(post.createdAt).toLocaleDateString('hu-HU') : 'Ismeretlen dátum'}
         </div>
         <p className="post-content">{post.content}</p>
       </div>
@@ -69,7 +69,7 @@ export default function PostDetail() {
           post.comments.map(c => (
             <div key={c.id} className="comment">
               <span className="comment-author">{c.author}</span>
-              <span className="comment-date">{new Date(c.created_at).toLocaleDateString('hu-HU')}</span>
+              <span className="comment-date">{c.createdAt ? new Date(post.createdAt).toLocaleDateString('hu-HU') : 'Ismeretlen dátum'}</span>
               <p className="comment-content">{c.content}</p>
             </div>
           ))

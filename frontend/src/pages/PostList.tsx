@@ -101,7 +101,7 @@ export default function PostList() {
           <div key={post.id} className="post-card" onClick={() => navigate(`/posts/${post.id}`)}>
             <h2>{post.title}</h2>
             <div className="post-meta">
-              ✍️ {post.author} · {new Date(post.created_at).toLocaleDateString('hu-HU')}
+              ✍️ {post.author} · {post.createdAt ? new Date(post.createdAt).toLocaleDateString('hu-HU') : 'Ismeretlen dátum'}
             </div>
             <p className="post-excerpt">
               {post.content.length > 150 ? post.content.slice(0, 150) + '...' : post.content}

@@ -5,7 +5,7 @@ export interface Post {
   title: string;
   content: string;
   author: string;
-  created_at: string;
+  createdAt: string;
 }
 
 export interface Comment {
@@ -13,7 +13,7 @@ export interface Comment {
   post_id: number;
   author: string;
   content: string;
-  created_at: string;
+  createdAt: string;
 }
 
 export interface PostWithComments extends Post {
