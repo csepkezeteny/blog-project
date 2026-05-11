@@ -16,16 +16,3 @@ CREATE TABLE IF NOT EXISTS comments (
     content     TEXT    NOT NULL,
     created_at  TEXT    DEFAULT CURRENT_TIMESTAMP
 );
-
--- Minta adatok
-INSERT INTO posts (title, content, author) VALUES
-    ('Üdvözlünk a Blog Platformon!',
-     'Ez az első bejegyzés. A blog platformon bejegyzéseket olvashatsz és kommentelhetsz.',
-     'Admin'),
-    ('Node.js és Express alapok',
-     'A Node.js egy szerver oldali JavaScript futtatókörnyezet. Az Express.js egy minimális, rugalmas Node.js webes keretrendszer.',
-     'Fejlesztő');
-
-INSERT INTO comments (post_id, content, author) VALUES
-    (1, 'Szuper platform, gratulálok!', 'Látogató'),
-    (1, 'Várom az újabb bejegyzéseket!', 'Olvasó');
